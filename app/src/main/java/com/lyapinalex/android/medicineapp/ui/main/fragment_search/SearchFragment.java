@@ -18,7 +18,7 @@ import com.lyapinalex.android.medicineapp.R;
 import com.lyapinalex.android.medicineapp.core.CoreApp;
 import com.lyapinalex.android.medicineapp.net.models.ResponseBody;
 import com.lyapinalex.android.medicineapp.net.models.Result;
-import com.lyapinalex.android.medicineapp.ui.MedicineActivity;
+import com.lyapinalex.android.medicineapp.ui.description_activity.MedicineActivity;
 import com.lyapinalex.android.medicineapp.ui.main.MedicineListAdapter;
 
 import java.util.Objects;
@@ -101,6 +101,7 @@ public class SearchFragment extends Fragment implements SearchFragmentContract.V
 
     @Override
     public void onItemClicked(Result medicine) {
+
         openDescription(medicine);
     }
 

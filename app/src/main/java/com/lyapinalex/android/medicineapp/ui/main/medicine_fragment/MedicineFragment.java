@@ -19,7 +19,7 @@ import com.lyapinalex.android.medicineapp.base.BaseFragment;
 import com.lyapinalex.android.medicineapp.core.CoreApp;
 import com.lyapinalex.android.medicineapp.net.models.ResponseBody;
 import com.lyapinalex.android.medicineapp.net.models.Result;
-import com.lyapinalex.android.medicineapp.ui.MedicineActivity;
+import com.lyapinalex.android.medicineapp.ui.description_activity.MedicineActivity;
 import com.lyapinalex.android.medicineapp.ui.main.MedicineListAdapter;
 
 import java.util.Objects;

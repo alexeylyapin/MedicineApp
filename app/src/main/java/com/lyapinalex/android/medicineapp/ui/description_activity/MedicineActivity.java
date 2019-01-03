@@ -1,4 +1,4 @@
-package com.lyapinalex.android.medicineapp.ui;
+package com.lyapinalex.android.medicineapp.ui.description_activity;
 
 
 import android.annotation.SuppressLint;
@@ -23,7 +23,6 @@ public class MedicineActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         ActionBar actionBar = getSupportActionBar();
         Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_medicine);
@@ -34,7 +33,6 @@ public class MedicineActivity extends AppCompatActivity {
     }
 
     private void onFailure(Throwable throwable) {
-
         Toast.makeText(this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
 
     }
