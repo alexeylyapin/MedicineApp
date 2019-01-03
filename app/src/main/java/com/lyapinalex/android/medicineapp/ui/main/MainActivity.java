@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.lyapinalex.android.medicineapp.R;
 import com.lyapinalex.android.medicineapp.ui.main.fragment_search.SearchFragment;
@@ -61,13 +60,11 @@ public class MainActivity extends AppCompatActivity {
         searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
-                Toast.makeText(MainActivity.this, "onMenuItemActionExpand called", Toast.LENGTH_SHORT).show();
                 return true;
             }
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem menuItem) {
-                Toast.makeText(MainActivity.this, "onMenuItemActionCollapse called", Toast.LENGTH_SHORT).show();
                 showFragment(mMedicineFragment);
                 return true;
             }
@@ -76,67 +73,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-  /*  private void medicineUploader(int type) {
-        if (mAdapter.getItemCount() == 0) {
-            mAdapter.clearList();
-            mPresenter.clearData();
-            mProgressBar.setVisibility(View.VISIBLE);
-            switch (type) {
-                case 1:
-                    mPresenter.onLoading(((CoreApp) getApplication()).getNetManager());
-                case 0:
-                    mPresenter.onSearchSubmit(search, ((CoreApp) getApplication()).getNetManager());
-            }
-        } else {
-            mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                @Override
-                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                    super.onScrolled(recyclerView, dx, dy);
-                    totalItemCount = mLayoutManager.getItemCount();
-                    lastVisibleItem = ((LinearLayoutManager) mRecyclerView.getLayoutManager())
-                            .findLastVisibleItemPosition();
-                    if (!loading && totalItemCount <= (lastVisibleItem + VISIBLE_THRESHOLD) && totalItemCount % 50 == 0) {
-                        recyclerViewState = recyclerView.getLayoutManager().onSaveInstanceState();
-                        mProgressBar.setVisibility(View.VISIBLE);
-                        switch (type) {
-                            case 1:
-                                mPresenter.onLoading(((CoreApp) getApplication()).getNetManager());
-
-
-                            case 0:
-                                mPresenter.onSearchSubmit(search, ((CoreApp) getApplication()).getNetManager());
-                        }
-
-                    }
-                }
-            });
-
-        }
-    }*/
-
-
-
-
-  /*  private void searchUploader(String search) {
-        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                totalItemCount = mLayoutManager.getItemCount();
-                lastVisibleItem = ((LinearLayoutManager) mRecyclerView.getLayoutManager())
-                        .findLastVisibleItemPosition();
-                if (!loading && totalItemCount <= (lastVisibleItem + VISIBLE_THRESHOLD) && totalItemCount % 50 == 0) {
-                    recyclerViewState = recyclerView.getLayoutManager().onSaveInstanceState();
-                    mPresenter.onSearchSubmit(search, ((CoreApp) getApplication()).getNetManager());
-                    mProgressBar.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-        mAdapter.clearList();
-        mPresenter.clearData();
-        mProgressBar.setVisibility(View.VISIBLE);
-        mPresenter.onSearchSubmit(search, ((CoreApp) getApplication()).getNetManager());
-    }*/
 
 }

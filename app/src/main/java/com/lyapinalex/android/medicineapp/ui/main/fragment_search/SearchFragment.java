@@ -101,7 +101,6 @@ public class SearchFragment extends Fragment implements SearchFragmentContract.V
 
     @Override
     public void onItemClicked(Result medicine) {
-
         openDescription(medicine);
     }
 
