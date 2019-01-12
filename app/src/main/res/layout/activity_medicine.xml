@@ -1,77 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.v4.widget.NestedScrollView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/trade_label"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+
+    <TextView
         android:id="@+id/trade_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/packging_descr"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@android:color/black"
         tools:text="Назва лікарського засобу" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/packing_description"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/packging_descr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/composition_descr"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/trade_label"
+        android:textColor="@android:color/black"
         tools:text="Опис упаковки" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/composition_description"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/composition_descr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/composition_inn"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/packging_descr"
+        android:textColor="@android:color/background_dark"
         tools:text="Фармакологічний опис" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/composition_inn"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/composition_inn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/composition_pharm_form"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/composition_descr"
+        android:textColor="@android:color/black"
         tools:text="Назва діючого засобу" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/composition_pharm_form"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/composition_pharm_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/manufacturer_name"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/composition_inn"
+        android:textColor="@android:color/black"
         tools:text="Форма" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/manufacturer_name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/manufacturer_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/composition_pharm_form"
+        android:textColor="@android:color/black"
         tools:text="Назва виробника" />
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -9,8 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.lyapinalex.android.medicineapp.R;
+import com.lyapinalex.android.medicineapp.ui.main.fragment_medicine.MedicineFragment;
 import com.lyapinalex.android.medicineapp.ui.main.fragment_search.SearchFragment;
-import com.lyapinalex.android.medicineapp.ui.main.medicine_fragment.MedicineFragment;
 
 public class MainActivity extends AppCompatActivity {
 

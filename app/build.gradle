@@ -11,9 +11,13 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug{
+            buildConfigField "String", "API_URL", "\"https://api.pills-prod.sdh.com.ua\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_URL", "\"https://api.pills-prod.sdh.com.ua\""
         }
     }
     compileOptions {

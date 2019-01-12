@@ -1,4 +1,4 @@
-package com.lyapinalex.android.medicineapp.ui.main.fragment_search;
+package com.lyapinalex.android.medicineapp.ui.main.fragment_medicine;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,21 +14,21 @@ import com.lyapinalex.android.medicineapp.ui.main.fragment_utils.MedicineListAda
 
 import java.util.Objects;
 
-public class SearchFragment extends BaseFragment implements FragmentContract.View, MedicineListAdapter.OnItemClickListener {
+public class MedicineFragment extends BaseFragment implements FragmentContract.View, MedicineListAdapter.OnItemClickListener {
 
 
     private boolean loading = false;
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mPresenter.attachView(this);
-        String search = Objects.requireNonNull(getArguments()).getString(TAG);
-        initScrollListener(search);
+        initScrollListener();
 
     }
 
-    private void initScrollListener(String search) {
+    private void initScrollListener() {
 
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -38,16 +38,14 @@ public class SearchFragment extends BaseFragment implements FragmentContract.Vie
                 int lastVisibleItem = ((LinearLayoutManager) Objects.requireNonNull(mRecyclerView.getLayoutManager())).findLastVisibleItemPosition();
                 int VISIBLE_THRESHOLD = 1;
                 if (!loading && totalItemCount <= (lastVisibleItem + VISIBLE_THRESHOLD) && totalItemCount % 50 == 0) {
-                    loading = true;
                     mProgressBar.setVisibility(View.VISIBLE);
-                    mPresenter.onSearchSubmit(search, ((CoreApp) Objects.requireNonNull(getActivity()).getApplication()).getNetManager());
+                    mPresenter.onLoading(((CoreApp) Objects.requireNonNull(getActivity()).getApplication()).getNetManager());
                 }
             }
         });
-        loading = false;
         mProgressBar.setVisibility(View.VISIBLE);
-        mPresenter.onSearchSubmit(search, ((CoreApp) Objects.requireNonNull(getActivity()).getApplication()).getNetManager());
+        mPresenter.onLoading(((CoreApp) Objects.requireNonNull(getActivity()).getApplication()).getNetManager());
     }
 
-}
 
+}

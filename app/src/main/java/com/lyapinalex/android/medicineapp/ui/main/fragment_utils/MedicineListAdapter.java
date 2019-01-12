@@ -1,4 +1,4 @@
-package com.lyapinalex.android.medicineapp.ui.main;
+package com.lyapinalex.android.medicineapp.ui.main.fragment_utils;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -39,7 +39,7 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
         viewHolder.medicineTradeLabel.setText(medicines.get(i).getTradeLabel().getName());
         if (medicines.get(i).getManufacturer() != null) {
             viewHolder.medicineManufacturerName.setText(medicines.get(i).getManufacturer().getName());
-        } else viewHolder.medicineManufacturerName.setText("Даних немає");
+        } else viewHolder.medicineManufacturerName.setText(R.string.no_data);
 
     }
 
@@ -57,12 +57,12 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         private TextView medicineTradeLabel;
         private TextView medicineManufacturerName;
 
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             medicineTradeLabel = itemView.findViewById(R.id.trade_label);
             medicineManufacturerName = itemView.findViewById(R.id.manufacturer_name);

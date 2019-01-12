@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">MedicineApp</string>
     <string name="action_search">Поиск</string>
-    <string name="loading_text">Loading...</string>
+    <string name="loading_text">Loading…</string>
+    <string name="no_data">Даних немає</string>
+    <string name="trade_label">Назва лікарського засобу</string>
+    <string name="packing_description">Опис упаковки</string>
+    <string name="composition_description">Фармакологічний опис</string>
+    <string name="composition_inn">Назва діючого засобу</string>
+    <string name="composition_pharm_form">Форма</string>
+    <string name="manufacturer_name">Назва виробника</string>
 </resources>

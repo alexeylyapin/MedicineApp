@@ -9,8 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lyapinalex.android.medicineapp.R;
+import com.lyapinalex.android.medicineapp.core.CoreApp;
 import com.lyapinalex.android.medicineapp.net.INetManger;
-import com.lyapinalex.android.medicineapp.net.NetManager;
 import com.lyapinalex.android.medicineapp.net.models.Result;
 
 import java.util.Objects;
@@ -26,7 +26,7 @@ public class MedicineActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_medicine);
-        INetManger netManger = new NetManager();
+        INetManger netManger = ((CoreApp) getApplication()).getNetManager();
         netManger.getMedicine(getIntent().getStringExtra(MED_ID)).subscribe(this::onSuccess, this::onFailure);
 
 
@@ -46,7 +46,12 @@ public class MedicineActivity extends AppCompatActivity {
         TextView composition_inn = findViewById(R.id.composition_inn);
         TextView composotion_pharm_form = findViewById(R.id.composition_pharm_form);
         label.setText(result.getTradeLabel().getName());
-        manufacturerName.setText(result.getManufacturer().getName());
+        if (result.getManufacturer() != null) {
+            manufacturerName.setText(result.getManufacturer().getName());
+        } else {
+            manufacturerName.setText(R.string.no_data);
+        }
+
         packagingDescr.setText(result.getPackaging().getDescription());
         composition_descr.setText(result.getComposition().getDescription());
         composition_inn.setText(result.getComposition().getInn().getName());

@@ -1,5 +1,6 @@
 package com.lyapinalex.android.medicineapp.net;
 
+import com.lyapinalex.android.medicineapp.BuildConfig;
 import com.lyapinalex.android.medicineapp.net.models.ResponseBody;
 import com.lyapinalex.android.medicineapp.net.models.Result;
 
@@ -11,17 +12,15 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetManager implements INetManger {
-    public static final String BASE_URL = "https://api.pills-prod.sdh.com.ua/";
-    private Retrofit mRetrofit;
     private MedicineApi mApi;
 
     public NetManager() {
-        mRetrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BuildConfig.API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
-        mApi = mRetrofit.create(MedicineApi.class);
+        mApi = retrofit.create(MedicineApi.class);
     }
 
     @Override
